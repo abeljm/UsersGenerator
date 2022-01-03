@@ -6,11 +6,11 @@ Genera posibles usuarios de una organizacion a partir de unos nombres
 
 realizar antes
 ```bash
-pip3 install -r requirements.txt
+pip3 install usersgenerator
 ```
 guardar en un archivo de texto nombre de usuarios y ejecutar de la siguiente manera:
 ```bash
-python3 usersgenerator.py -u <userfile> -o <outputfile>
+usersgenerator -u <userfile> -o <outputfile>
 ```
 
 <p align="center">
