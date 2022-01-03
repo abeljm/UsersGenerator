@@ -8,7 +8,9 @@ from colorama import init, Fore
 from time import sleep
 init()
 
-
+if sys.version_info < (3, 0):
+	print(Fore.RED + "Disculpa, la aplicacion usa python 3.x\n")
+	sys.exit(1)
 def checkVersion():
 	if sys.version_info < (3, 0):
 	    print(Fore.RED + "Disculpa, la aplicacion usa python 3.x\n")
@@ -31,7 +33,7 @@ def logo():
 
 def readFile(usersfile):
 	users = []
-	with open(userfile, "r") as user:
+	with open(usersfile, "r") as user:
 		for line in user:
 			users.append(line.rstrip())
 		return users		
@@ -69,10 +71,8 @@ def saveFile(g_users,name_file):
 		for g_user in g_users:
 			file.write('%s\n' %(g_user))
 	return path_file
-	
 
-if __name__ == '__main__':
-
+def main():
 	parser = argparse.ArgumentParser(description='Ejemplo:', epilog="python3 usersgenerator.py -u users.txt -o resultado.txt")
 	parser.add_argument("-u", "--users", type=str, required=True, help="lista de usuarios en archivo de texto, ejemplo: -u users.txt")
 	parser.add_argument("-o", "--output",  type=str, required=True, help="Guardar resultado en archivo de texto, poner nombre ejemplo: -o resultado.txt")
@@ -101,3 +101,9 @@ if __name__ == '__main__':
 		
 	except Exception as e:
 		print(e)
+	
+
+if __name__ == '__main__':
+	main()
+
+	
