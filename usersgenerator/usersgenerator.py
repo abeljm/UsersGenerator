@@ -35,7 +35,7 @@ def readFile(usersfile):
 	users = []
 	with open(usersfile, "r") as user:
 		for line in user:
-			users.append(line.rstrip())
+			users.append(line.rstrip().lower())
 		return users		
 
 def generateUsers(users):
@@ -47,10 +47,10 @@ def generateUsers(users):
 			initial_l = user_s[1][0]
 			g_users.append(user_s[0]) 
 			g_users.append(user_s[1])
+			g_users.append(user_s[0]+user_s[1])
 			g_users.append(user.replace(' ',"-"))
 			g_users.append(user.replace(' ',"_"))
-			g_users.append(user.replace(' ',"."))
-			g_users.append(user_s[0]+user_s[1])
+			g_users.append(user.replace(' ',"."))			
 			g_users.append(initial_u+user_s[1])        		
 			g_users.append(initial_u+'-'+user_s[1])
 			g_users.append(initial_u+'_'+user_s[1])

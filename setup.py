@@ -10,7 +10,7 @@ README = (HERE / "README.md").read_text()
 # This call to setup() does all the work
 setup(
     name="usersgenerator",
-    version="2.1.0",
+    version="2.2.0",
     description="Generate possible users of an organization from some names",
     long_description=README,
     long_description_content_type="text/markdown",
