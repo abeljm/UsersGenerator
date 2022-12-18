@@ -8,9 +8,6 @@ from colorama import init, Fore
 from time import sleep
 init()
 
-if sys.version_info < (3, 0):
-	print(Fore.RED + "Disculpa, la aplicacion usa python 3.x\n")
-	sys.exit(1)
 def checkVersion():
 	if sys.version_info < (3, 0):
 	    print(Fore.RED + "Disculpa, la aplicacion usa python 3.x\n")
